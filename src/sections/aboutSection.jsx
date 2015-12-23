@@ -13,12 +13,14 @@ class AboutSection extends React.Component {
                     </header>
 
                     <a href="#" className="image featured"><img src="images/me.jpg" alt=""/></a>
-
                     <p>
-                        I am a software developer who is graduated at Fontys University of Applied Science, Eindhoven, the Netherlands,
-                        currently working at ThoughtWorks, Beijing. I have development experiences in ASP .NET, Windows UWP Application, Virtual Reality,
-                        CE-HTML TV Application, etc. And I am also very interested in many different kinds of frontend development.
-                        Coding makes my life colorful!
+                        I am a front-end developer who is working at <a href="http://www.ziroom.com/zhaopin/about.html" target="_blank" >Ziroom</a>, Beijing
+                        I followed the software engineer course in Fontys, the Netherland for one year, and learnt the knowledge about web all by myself.
+                        I have development experiences in ASP.NET MVC, Web API, and a little about PHP. I'm also interested in the front-end technology,
+                        and I've already used reactJS, webpack, SASS, npm during my work.
+                    </p>
+                    <p>
+                        Let's have fun hacking.
                     </p>
 
                 </div>
