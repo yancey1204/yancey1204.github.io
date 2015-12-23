@@ -12,7 +12,7 @@ class AboutSection extends React.Component {
                         <h2>About Me</h2>
                     </header>
 
-                    <a href="#" className="image featured"><img src="images/me.JPG" alt=""/></a>
+                    <a href="#" className="image featured"><img src="images/me.jpg" alt=""/></a>
 
                     <p>
                         I am a software developer who is graduated at Fontys University of Applied Science, Eindhoven, the Netherlands,

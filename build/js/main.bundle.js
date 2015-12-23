@@ -20374,7 +20374,7 @@
 	                    React.createElement(
 	                        "a",
 	                        { href: "#", className: "image featured" },
-	                        React.createElement("img", { src: "images/me.JPG", alt: "" })
+	                        React.createElement("img", { src: "images/me.jpg", alt: "" })
 	                    ),
 	                    React.createElement(
 	                        "p",
