@@ -1,2 +1,5 @@
 .idea
 node_modules
+assets/react/app/.module-cache
+.DS_Store
+
