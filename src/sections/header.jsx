@@ -38,7 +38,7 @@ class Header extends React.Component {
 
                     <ul className="icons">
                         <li><a href="http://www.linkedin.com/profile/view?id=AAMAABbxFlIB8ynGYzv-33VJpCXmhwFMP6JheJU&trk=hp-identity-name"  target="_blank" className="icon fa-linkedin"><span className="label">LinkedIn</span></a></li>
-                        <li><a href="#" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100004821181164" target="_blank" className="icon fa-facebook"><span className="label">Facebook</span></a></li>
                         <li><a href="https://github.com/yancey1204" target="_blank" className="icon fa-github"><span className="label">Github</span></a></li>
                         <li><a href="http://weibo.com/2831539772/profile?topnav=1&wvr=6&is_all=1"  target="_blank" className="icon fa-weibo"><span className="label">Dribbble</span></a></li>
                     </ul>

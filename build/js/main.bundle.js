@@ -19873,7 +19873,7 @@
 	                            null,
 	                            React.createElement(
 	                                "a",
-	                                { href: "#", className: "icon fa-facebook" },
+	                                { href: "https://www.facebook.com/profile.php?id=100004821181164", target: "_blank", className: "icon fa-facebook" },
 	                                React.createElement(
 	                                    "span",
 	                                    { className: "label" },
