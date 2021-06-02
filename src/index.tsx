@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./style/index.scss";
+import md from "./blogs/2021-05-15-dynamic-programming-with-fibonacci-sequence.md";
+
 
 ReactDOM.render(
     <React.StrictMode>
-        <div className="wrapper">
-            <h1>React 17 and TypeScript 4 and Webpack 5 App!🚀 </h1>
-        </div>
+        <div dangerouslySetInnerHTML={{ __html: md }}></div>
     </React.StrictMode>,
     document.getElementById("root"),
 );

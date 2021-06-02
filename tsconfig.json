@@ -26,5 +26,8 @@
         "node_modules",
         "build",
         "dist"
-    ]
+    ],
+    "files": [
+        "./globals.d.ts"
+      ]
 }
