@@ -1,8 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
 import RemarkHTML from "remark-html";
-import RemarkFrontmatter from "remark-frontmatter";
-
 module.exports = {
     mode: 'development',
     entry: {
@@ -56,9 +53,8 @@ module.exports = {
                     {
                         loader: "remark-loader",
                         options: {
-                            removeFrontMatter: false,
                             remarkOptions: {
-                                plugins: [RemarkHTML, RemarkFrontmatter],
+                                plugins: [RemarkHTML],
                             },
                         },
                     },
