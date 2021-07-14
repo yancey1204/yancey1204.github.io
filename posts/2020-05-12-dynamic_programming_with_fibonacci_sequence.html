@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Generic Page - Zhihui (Yancey) Yan's Site</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Stay Small Dream Big</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Me</a></li>
+                <!-- <li><a href="generic.html">Blogs</a></li> -->
+                <li class="active"><a href="../blogs.html">Blogs</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/yancey1204/" class="icon brands fa-linkedin"><span
+                            class="label">LinkedIn</span></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100004821181164"
+                        class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/yancey1204/" class="icon brands fa-instagram"><span
+                            class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/yancey1204" class="icon brands fa-github"><span
+                            class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <section class="post">
+                <header class="major">
+                    <span class="date">May 12, 2020</span>
+                    <h1>Dynamic programming
+                        <br>
+                        with
+                        <br>
+                        Fibonacci Sequence
+                        <br>
+                        step by step tutorial
+                    </h1>
+                </header>
+
+                <h2>What&#39;s Fibonacci Sequence?</h2>
+                <h3>1, 1, 2, 3, 5, 8, 13, 21...</h3>
+                <p>Basically, the Fibonacci Sequence is a sequence that starts with two 1, and all the following numbers
+                    are
+                    the sum of
+                    the previous two numbers.
+                </p>
+                <h3>1, <strong>1, 2</strong>, 3</h3>
+                <p>
+                    For example, the <strong>fourth</strong> number 3, is the sum of the previous two numbers 1 and 2.
+                </p>
+                <h3>1, 1, <strong>2, 3</strong>, 5</h3>
+                <p>
+                    The <strong>fifth</strong> number 5, on the sequence is the sum of the previous two numbers 2 and 3.
+                </p>
+                <p>So now let&#39;s start with our question.</p>
+                <h2>
+                    Please find the n-th number on the Fibonacci Sequence.
+                </h2>
+                <p>Let&#39;s define a function <code>fib(n)</code> which will accept one parameter <code>n</code>.
+                    Please complete the function to display the Fibonacci sequence up to the nth term.</p>
+                <pre><code class="lang-javascript">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fib</span><span class="hljs-params">(n)</span> </span>{}</code></pre>
+                <h4>Example input:</h4>
+                <pre><code><span class="hljs-number">6</span><span class="hljs-number">7</span></code></pre>
+                <h4>Expected output:</h4>
+                <pre><code><span class="hljs-number">8</span><span class="hljs-number">13</span></code></pre>
+                <h4>
+                    Since the n-th term in the sequence is always the sum of the previous two numbers. So we can do it
+                    with
+                    a
+                    straightforward <strong>Recursive Solution</strong>:
+                </h4>
+                <details>
+                    <summary>Maybe you would like to think of your own solution first, click here when you done
+                    </summary>
+                    <pre>
+                        <code>
+                        const fib = (n) = {
+                            if(n === 1 || n === 2) {
+                                return 1;
+                            }
+                            else {
+                                return fib(n - 1) + fib(n - 2)
+                            }
+                        }
+                    </code>
+                        </pre>
+                </details>
+
+                <p>You may find this solution works but actually, it&#39;s very very inefficient. Let&#39;s see why.</p>
+                <div class="image main"><img
+                        src="https://user-images.githubusercontent.com/10513970/118227426-1b030980-b4bb-11eb-9e25-15f06a700148.jpeg"
+                        alt="Image of analysis of Naive recursive approach"></div>
+                <p>Here is an example we try to find the 6th Fibonacci number. To do that, we need to find out the 5th
+                    and
+                    4th Fibonacci
+                    numbers and add them together. And to find the 5th Fibonacci number, we need to find out the 4th and
+                    3rd
+                    Fibonacci
+                    numbers and add them together.
+                    And as you can see, the problem with this approach is that there are a lot of duplications.
+                    For instance, in order to get the 3rd Fibonacci number, we repeat the competition three times.</p>
+                <div class="image main">
+                    <img src="https://user-images.githubusercontent.com/10513970/118227474-2fdf9d00-b4bb-11eb-863d-fa34eef384b8.jpeg"
+                        alt="Image of analysis of Naive recursive approach">
+                </div>
+                <div class="image main">And we repeated twice in order to get the 4th Fibonacci number.
+                    <img src="https://user-images.githubusercontent.com/10513970/118227580-5b628780-b4bb-11eb-9c2f-b9dbcc6b486a.jpeg"
+                        alt="Image of analysis of Naive recursive approach">
+                </div>
+                <p>This is very slow and inefficient. And the time to find the n-th Fibonacci number will be
+                    <strong>O(2^n)</strong>.
+                </p>
+                <h2>Dynamic Programming with memoization Solution</h2>
+                <h4>In order to solve the
+                    problem, we can
+                    cache all the intermediate results.</h4>
+                <h4>
+                    You could
+                    either do it using the <code>bottom-up</code> solution or <code>map()</code>. Here are the examples
+                    for
+                    both of
+                    them.</h4>
+                <h3>Bottom-Up</h3>
+                <details>
+                    <summary>Maybe you would like to think of your own solution first, click here when you done
+                    </summary>
+                    <pre>
+                        <code>
+                        const fib = n =&gt; {
+                            const memo = [];
+                            for (let i = 0; i &lt;= n; i++) {
+                                if (i &lt; 2)   memo[i] = i;
+                                else memo[i] = memo[i-2] + memo[i-1];
+                            }
+                            return memo[n];
+                        }
+                        </code>
+                    </pre>
+                    <p>
+                        So for this solution, we created an empty array, and iterate from 0 to n.
+                        For instance, we still want to find the 6th Fibonacci number. As we run the code above.
+
+                        When <code>i &lt; 2</code>, we just put &#39;i&#39; into the array. [0, 1]
+                        When <code>i &gt;= 2</code>, We will try to find the 6th number, and it will search all the way
+                        from
+                        the
+                        6th number
+                        to the 2nd number. Just like the image below indicated.
+                    </p>
+                    <div class="image main">
+                        <img src="https://user-images.githubusercontent.com/10513970/118227596-62899580-b4bb-11eb-976f-f595d7b89108.jpeg"
+                            alt="Image of analysis of dynamic programming bottom-up approach">
+                    </div>
+                    <p>
+                        As we did the search, we are going to collect the results. when it comes to the 2nd Fibonacci
+                        number,
+                        it&#39;s 1.
+                        And then the 3rd number should be 2, and the 5th number will go 3 and so on.
+                    </p>
+                    <div class="image main">
+                        <img src="https://user-images.githubusercontent.com/10513970/118227615-6b7a6700-b4bb-11eb-8132-d5f1c0d046ea.jpeg"
+                            alt="Image of analysis of dynamic programming bottom-up approach">
+                    </div>
+                    <p>
+                        In this solution, we just created one array, and store all the results in between. And the time
+                        complexity will go
+                        down to O(n) since we don&#39;t do any duplicated competition anymore.
+                    </p>
+                </details>
+
+                <h3><code>Map()</code></h3>
+                <details>
+                    <summary>Maybe you would like to think of your own solution first, click here when you done
+                    </summary>
+                    <pre>
+                        <code>
+                            const fib = (n, memo) =&gt; {
+                                memo = memo || new Map();
+
+                                if (memo.has(n)) return memo.get(n);
+                                if (n &lt; 2) return n;
+
+                                memo.set(n, fib(n - 1, memo) + fib(n - 2, memo));
+                                return memo.get(n)
+                            }
+                        </code>
+                    </pre>
+
+                </details>
+
+                <h4>
+                    As a matter of fact, we only need the previous two values instead of the store all the values in one
+                    array or one
+                    Map.
+                </h4>
+                <p> Please try to only use the previous two values to get the n-th term Fibonacci number.</p>
+                <!-- <p>
+                    Please leave your comment below to only use the previous two values to get the n-th term Fibonacci
+                    number.
+                </p> -->
+
+        </div>
+    </div>
+</body>
+
+</html>
