@@ -4069,3 +4069,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 		visibility: visible;
 	}
 }
+
+.utterances {
+	height: 269px;
+}
